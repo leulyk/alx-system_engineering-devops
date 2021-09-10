@@ -42,7 +42,7 @@
 
 ## Mandatory Tasks
 
-### 0. [<o>](https://github.com/leulyk/alx-system_engineering-devops/blob/main/0x03-shell_variables_expansions/0-alias)
+### 0. [alias](https://github.com/leulyk/alx-system_engineering-devops/blob/main/0x03-shell_variables_expansions/0-alias)
 
     Create a script that creates an alias.
 
@@ -137,7 +137,7 @@
 
     Write a script that prints every other line from the input, starting with the first line.
 
-### 17. I'm an instant star. Just add water and stir. (*not implemented)
+### 17. I'm an instant star. Just add water and stir. (*not implemented*)
 
     Write a shell script that adds the two numbers stored in the environment variables WATER and STIR and prints the result.
 
