@@ -35,14 +35,14 @@ At the end of this project, you are expected to be able to explain to anyone:
 
 ### Tasks 0 - 3 contain multiple choice questions.
 
-### [Task 4]()
+### [Task 4](https://github.com/leulyk/alx-system_engineering-devops/blob/main/0x07-networking_basics/4-TCP_and_UDP_ports)
 
 Write a Bash script that displays listening ports:
 
 	That only shows listening sockets
 	That shows the PID and name of the program to which each socket belongs
 
-### [Task 5]()
+### [Task 5](https://github.com/leulyk/alx-system_engineering-devops/blob/main/0x07-networking_basics/5-is_the_host_on_the_network)
 
 Write a Bash script that pings an IP address passed as an argument.
 
