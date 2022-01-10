@@ -10,5 +10,6 @@
 
 sudo apt update -y
 sudo apt install -y nginx
+sudo ufw allow 'HTTP'
 echo "Hello World!" > /var/www/html/index.nginx-debian.html
 service nginx start
