@@ -10,3 +10,4 @@
 
 sudo apt update
 sudo apt install -y nginx
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
