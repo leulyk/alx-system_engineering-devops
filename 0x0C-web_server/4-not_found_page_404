@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Configure the Nginx server so that /redirect_me is redirecting to another page. The redirection must be a '301 Moved Permanently'
+# Configure the Nginx server so that it handles a 404 page.
 
 sudo apt update -y
 sudo apt install -y nginx
