@@ -25,34 +25,12 @@ exec { '404 page':
     path    => '/usr/bin/'
 }
 
-file { 'Nginx configuration, updated to include redirections':
-    ensure  => file,
-    path    => '/etc/nginx/sites-enabled/default',
-    content =>
-"server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
-
-	root /var/www/html;
-
-	# Add index.php to the list if you are using PHP
-	index index.html index.htm index.nginx-debian.html;
-
-	server_name _;
-	rewrite ^/redirect_me google.com permanent;
-	add_header X-Served-By \$hostname;
-	error_page 404 /custom_404.html;
-	location = /custom_404.html {
-		root /usr/share/nginx/html;
-		internal;
-	}
-
-	location / {
-		# First attempt to serve request as file, then
-		# as directory, then fall back to displaying a 404.
-		try_files \$uri \$uri/ =404;
-	}
-}"
+$new_header = "\n\tadd_header X-Served-By \$hostname;"
+$redirect="server_name _;\n\trewrite ^/redirect_me google.com permanent;"
+$not_found="\n\terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}"
+exec { 'change the default configuration':
+    command => 'sudo sed -i "s/server_name _;/$redirect$new_header$not_found/" /etc/nginx/sites-enabled/default',
+    path    => '/usr/bin'
 }
 
 exec { 'restart nginx':
