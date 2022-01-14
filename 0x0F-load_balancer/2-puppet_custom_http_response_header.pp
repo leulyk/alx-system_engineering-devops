@@ -30,28 +30,29 @@ file { 'Nginx configuration, updated to include redirections':
     path    => '/etc/nginx/sites-enabled/default',
     content =>
 "server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
-               root /var/www/html;
-        # Add index.php to the list if you are using PHP
-        index index.html index.htm index.nginx-debian.html;
-        server_name _;
-        add_header X-Served-By \$hostname;
-        location / {
-                # First attempt to serve request as file, then
-                # as directory, then fall back to displaying a 404.
-                try_files \$uri \$uri/ =404;
-        }
-        error_page 404 /404.html;
-        location  /404.html {
-            internal;
-        }
+	listen 80 default_server;
+	listen [::]:80 default_server;
 
-        if (\$request_filename ~ redirect_me){
-            rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
-        }
-}
-",
+	root /var/www/html;
+
+	# Add index.php to the list if you are using PHP
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name _;
+	rewrite ^/redirect_me google.com permanent;
+	add_header X-Served-By \$hostname;
+	error_page 404 /custom_404.html;
+	location = /custom_404.html {
+		root /usr/share/nginx/html;
+		internal;
+	}
+
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		try_files \$uri \$uri/ =404;
+	}
+}"
 }
 
 exec { 'restart nginx':
