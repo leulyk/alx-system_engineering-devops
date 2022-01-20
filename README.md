@@ -30,3 +30,17 @@
 - ### [Networking #2](https://github.com/leulyk/alx-system_engineering-devops/tree/main/0x08-networking_basics_2)
 
 - ### [Introduction to web infrastructure design](https://github.com/leulyk/alx-system_engineering-devops/tree/main/0x09-web_infrastructure_design)
+
+- ### [Configuration management with puppet](https://github.com/leulyk/alx-system_engineering-devops/tree/main/0x0A-configuration_management)
+
+- ### [SSH configuration](https://github.com/leulyk/alx-system_engineering-devops/tree/main/0x0B-ssh)
+
+- ### [Nginx web server configuration](https://github.com/leulyk/alx-system_engineering-devops/tree/main/0x0C-web_server)
+
+- ### [HAproxy configuration](https://github.com/leulyk/alx-system_engineering-devops/tree/main/0x0F-load_balancer)
+
+- ### [Web stack debugging #0](https://github.com/leulyk/alx-system_engineering-devops/tree/main/0x0D-web_stack_debugging_0)
+
+- ### [Web stack debugging #1](https://github.com/leulyk/alx-system_engineering-devops/tree/main/0x0E-web_stack_debugging_1)
+
+- ### [Network hacking introduction - Netowork sniffing, ARP spoofing & dictionary attack](https://github.com/leulyk/alx-system_engineering-devops/tree/main/attack_is_the_best_defense)
