@@ -19,10 +19,6 @@ def todo_csv():
     todo_url = 'https://jsonplaceholder.typicode.com/users/{}/todos'\
                .format(argv[1])
 
-    total_count = 0
-    completed_count = 0
-    completed_list = ''
-
     user_data = get(user_url).json()
     todo_data = get(todo_url).json()
 
