@@ -29,7 +29,7 @@ def todo_csv():
     with open('USER_ID.csv', 'w', encoding='utf-8') as tasksData:
         taskWriter = writer(tasksData, quoting=QUOTE_ALL)
         for task in todo_data:
-            taskWriter.writerow([user_data['id'], user_data['name'],
+            taskWriter.writerow([user_data['id'], user_data['username'],
                                 task['completed'], task['title']])
 
 
