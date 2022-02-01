@@ -25,13 +25,13 @@ def todo_progress():
     todo_data = get(todo_url).json()
 
     for task in todo_data:
-        if task['completed'] is True:
+        if task.get('completed') is True:
             completed_count += 1
-            completed_list += "\t {}\n".format(task['title'])
+            completed_list += "\t {}\n".format(task.get('title'))
         total_count += 1
 
     print("Employee {} is done with tasks({}/{})"
-          .format(user_data['name'], completed_count, total_count))
+          .format(user_data.get('name'), completed_count, total_count))
     print(completed_list, end="")
 
 
