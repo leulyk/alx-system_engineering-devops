@@ -30,7 +30,7 @@ def todo_progress():
             completed_list += "\t {}\n".format(task.get('title'))
         total_count += 1
 
-    print("Employee {} is done with tasks({}/{})"
+    print("Employee {} is done with tasks({}/{}):"
           .format(user_data.get('name'), completed_count, total_count))
     print(completed_list, end="")
 
