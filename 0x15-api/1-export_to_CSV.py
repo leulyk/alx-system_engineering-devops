@@ -22,11 +22,14 @@ def todo_csv():
     user_data = get(user_url).json()
     todo_data = get(todo_url).json()
 
-    with open('USER_ID.csv', 'w', encoding='utf-8') as tasksData:
+    with open('{}.csv'.format(user_data.get('id')), 'w',
+              encoding='utf-8') as tasksData:
         taskWriter = writer(tasksData, quoting=QUOTE_ALL)
         for task in todo_data:
-            taskWriter.writerow([user_data['id'], user_data['username'],
-                                task['completed'], task['title']])
+            taskWriter.writerow([user_data.get('id'),
+                                 user_data.get('username'),
+                                 task.get('completed'),
+                                 task.get('title')])
 
 
 if __name__ == "__main__":

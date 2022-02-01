@@ -25,14 +25,15 @@ def todo_json():
     values = []
     for task in todo_data:
         current_task = {}
-        current_task['task'] = task['title']
-        current_task['completed'] = task['completed']
-        current_task['username'] = user_data['username']
+        current_task['task'] = task.get('title')
+        current_task['completed'] = task.get('completed')
+        current_task['username'] = user_data.get('username')
         values.append(current_task)
 
-    final_data = {user_data['id']: values}
+    final_data = {user_data.get('id'): values}
 
-    with open('USER_ID.json', 'w', encoding='utf-8') as tasksData:
+    with open('{}.json'.format(user_data.get('id')), 'w',
+              encoding='utf-8') as tasksData:
         dump(final_data, tasksData)
 
 
